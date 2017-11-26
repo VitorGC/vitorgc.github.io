@@ -1,0 +1,139 @@
+#principal{
+    background-color: #224cd3 /*no-repeat center top fixed*/;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+#Campo{
+    width: 690px;
+    height: 300px;
+}
+
+#dropdown{
+    position:relative;
+    margin-top:50px;
+    text-indent:3em;
+    width: 400px;
+    height: auto;
+    float: left;
+}
+
+.dropdown-menu, .caret{
+    position:relative;
+    width: 250px;
+    float: left;
+}
+
+#CampoDireita{
+    margin-top:50px;
+    width: 250px;
+    height: auto; 
+    float: left;  
+}
+
+#CampoBaixoEsquerda{
+    position:relative;
+    margin-top:50px;
+    text-indent:3em;
+    width: 400px;
+    height: auto;
+    float: left;
+}
+
+#CampoBaixoDireita{
+    position:relative;
+    margin-top:50px;
+    width: 250px;
+    height: auto; 
+    float: left; 
+}
+
+#passos{
+    top: 50px;
+    text-indent:3em;
+    width: 250px;
+    height: 50px; 
+}
+
+#iniciar{
+    position:relative;
+    margin-left:490px;
+    bottom: 50px;
+    width: 150px;
+    height: auto; 
+    float: left; 
+}
+
+.btinicio{
+    position:relative;
+    top: 50px;
+    width: 100px;
+    height: 25px;
+    float: left; 
+}
+
+table#tabelaaspec{
+    white-space: nowrap;
+	border: 2px solid #333333;
+	border-spacing: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 3px;
+}
+
+table#tabelaaspec td{
+    white-space: nowrap;
+	border: 2px solid #000000;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+    font-size: 20px;
+    position: center;
+    color: rgb(43, 41, 41);
+}
+
+#sobrepor, #sobreporRequisitos{
+    display: none;
+    background-color: #f9ff49d8;
+    width: 250px;
+    height: auto;     
+}
+
+#tela{
+    display: none;
+    border: 0.1px solid #001aff;
+}
+
+#selectDropDown{
+    width: 240px;
+}
+
+table{
+    white-space: nowrap;
+	border: 2px solid #333333;
+	border-spacing: 1px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 3px;
+}
+
+table td, th{
+    white-space: nowrap;
+	border: 2px solid #000000;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+    margin-top: auto;
+    font-size: 20px;
+    position: center;
+    color: rgb(43, 41, 41);
+}
+
+#final{
+    margin-left: auto;
+    margin-right: auto;
+    height: 550px;
+    width: auto;
+}
