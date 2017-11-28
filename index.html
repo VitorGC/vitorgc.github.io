@@ -1,17 +1,27 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml/DTD/xhtml-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br" xml:lang="pt-br">
+<html lang="en"></html>
     <head>
-        <title>SimSimplex</title>
+        <title>SimSimplex</title>       
+        <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script type="text/javascript" src = "JQuerys/jquery-3.2.1.js"></script>
         <meta http-equiv="Content-Type" content="text/html; charset-UTF-8"/>
         <link type="text/javascript" src = "script.js">
-        <link rel="stylesheet" type="text/css" href="aspect.css">
-        
-        <link rel="stylesheet" type="text/css" href="CSS/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="aspect.css">       
+        <link rel="stylesheet" type="text/css" href="CSS/bootstrap.css"> 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>       
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>
+        $( function() {
+            $( "#draggable" ).draggable({ scroll: true });
+            $( "#draggable2" ).draggable({ scroll: true, scrollSensitivity: 100 });
+            $( "#draggable3" ).draggable({ scroll: true, scrollSpeed: 100 });
+        } );
+        </script>  
     </head>
 
     
@@ -98,7 +108,23 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-2"></div>
+            <div class="col-md-2">
+                <div id="draggable" class="ui-widget-content"> 
+                    <div id="fechar" align=right><a href="javascript:fechar();">FECHAR</a></div> 
+                    Sou flutuante!
+                    <div id="mostraFlutuante">
+                        <table id="tabelaFuncao">
+                            <tbody id = "tableBody">
+                                <tr id="myRow">
+                                    <td>
+                                        Olá
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
             
         </div>
 
@@ -115,9 +141,14 @@
             var recebeFuncao = 1;
             var numRegras = 0;
             var contDivs = 0;
-            var definidor = 1;
+            var definidor = -1;
             var funcao = [];
             var contador = 0;
+
+            function fechar() { 
+                document.getElementById("draggable").style.display = 'none'; 
+            }
+
             jQuery('#iteracoes').keypress(function(event){
                 var keycode = (event.keyCode ? event.keyCode : event.which);
                 if(keycode == '13'){
@@ -146,6 +177,13 @@
                 }
             });
 
+            function newrow(captura) {
+                var table = document.getElementById("tableBody");
+                var row = table.insertRow(-1);
+                var cell = row.insertCell();
+                cell.innerHTML = captura;
+            }
+
             function minimiza(){
                 definidor = 1;
                 document.getElementById("selectDropDown").value = "MINIMIZA";
@@ -157,7 +195,7 @@
             }
 
             function definiTipo(){
-                for(var i=1; i<=matriz.length; i++){
+                for(var i=1; i<=(matriz[1].length-1); i++){
                     matriz[1][i] = matriz[1][i] * definidor;
                 }
             }
@@ -170,6 +208,7 @@
             }
 
             function splitString(stringToSplit, separator) {//Separa a String e seta cada valor no campo correspondente
+                newrow(stringToSplit);
                 var arrayOfStrings = stringToSplit.split(separator);
 
                 console.log('A string original é: "' + stringToSplit + '"');
@@ -192,7 +231,7 @@
                         if(i == 0){
                             matriz[1][i] = "Z";
                         }else
-                            matriz[1][i] = arrayOfStrings[i-1] * (definidor);
+                            matriz[1][i] = arrayOfStrings[i-1];//* (definidor)
                         //console.log(arrayOfStrings[i]);
                     }                    
                     matriz[1][arrayOfStrings.length+1] = "0";

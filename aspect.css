@@ -137,3 +137,55 @@ table td, th{
     height: 550px;
     width: auto;
 }
+
+body {
+    background-color: #CCC;
+    font-family: Tahoma,Arial;
+}
+#draggable {
+    position: relative; /* posição absoluta ao elemento pai, neste caso o BODY */
+    /* Posiciona no meio, tanto em relação a esquerda como ao topo */
+    overflow-x:auto;
+    overflow-y: auto;
+    left: 50%; 
+    top: 50%;
+    width: 300px; /* Largura da DIV */
+    height: 250px; /* Altura da DIV */
+    /* A margem a esquerda deve ser menos a metade da largura */
+    /* A margem ao topo deve ser menos a metade da altura */
+    /* Fazendo isso, centralizará a DIV */
+    margin-left: -100px;
+    margin-top: 200px;
+    background-color: #FFF;
+    color: #FFF;
+    background-color: rgba(86, 139, 236, 0.384);
+    text-align: center; /* Centraliza o texto */
+    z-index: 1000; /* Faz com que fique sobre todos os elementos da página */
+    padding: 0.5em;
+}
+#fechar {
+    margin: 5px;
+    font-size: 12px;
+}
+
+table#tabelaFuncao{
+    white-space: nowrap;
+    overflow-x:auto;
+    overflow-y: auto;
+	border: 2px solid #ffffff;
+	border-spacing: 1px;
+    margin: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	box-shadow: 3px;
+}
+
+table#tabelaFuncao td{
+    white-space: nowrap;
+	border: 2px solid #ffffff;
+	padding: 2px;
+	margin-left: auto;
+    margin-right: auto;
+    font-size: 15px;
+    color: #EEEEEE;
+}
